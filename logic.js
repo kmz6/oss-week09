@@ -26,3 +26,15 @@ export function summarize(days, limits) {
     const good = days.filter((day) => isGoodDay(day, limits));
     return `good for a run on ${good.length} of ${days.length} days`;
 }
+
+export function reasons(day, limits) {
+    const result = [];
+
+    if(day.rain > limits.rain) {
+        result.push("rain");
+    }
+    if(day.wind > limits.wind) {
+        result.push("wind");
+    }
+    return result;
+}
