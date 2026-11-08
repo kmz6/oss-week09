@@ -80,3 +80,19 @@ function render() {
   ? `${state.city.name}: ${summarize(state.days, state.limits)}.`
   : "";
 }
+
+rainInput.addEventListener("input", () => {
+  state.limits = {
+    rain: Number(rainInput.value),
+    wind: Number(windInput.value)
+  };
+  render();
+});
+
+windInput.addEventListener("input", () => {
+  state.limits = {
+    rain: Number(rainInput.value),
+    wind: Number(windInput.value)
+  };
+  render();
+});
